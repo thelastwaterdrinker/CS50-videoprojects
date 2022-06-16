@@ -1,0 +1,69 @@
+<!--
+<!DOCTYPE html>
+
+<head>
+  <html lang="en">
+  <title>Colors</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      document.querySelector('#red').onclick = function () {
+        document.querySelector('#hello').style.color = 'red';
+      }
+
+      document.querySelector('#blue').onclick = function () {
+        document.querySelector('#hello').style.color = 'blue';
+      }
+
+      document.querySelector('#green').onclick = function () {
+        document.querySelector('#hello').style.color = 'green';
+      }
+
+    });
+  </script>
+</head>
+
+<body>
+  <h1 id="hello">Hello!</h1>
+  <button id="red">Red</button>
+  <button id="blue">Blue</button>
+  <button id="green">Green</button>
+  </form>
+</body>
+
+</html>
+
+
+Shorter version of this code at the bottom:
+-->
+
+<!DOCTYPE html>
+
+<head>
+  <html lang="en">
+  <title>Colors</title>
+  <script>
+//it will go and load all the html code
+// alttaki koda alternatif document.addEventListener('DOMContentLoaded', () => {
+// basically => is replacing the function
+    document.addEventListener('DOMContentLoaded', function () {
+//for each means: i like to run this for each "button"(because i indicated i want to do this in the button)
+      document.querySelectorAll('button').forEach(function(button){
+        button.onclick=function(){
+          document.querySelector('#hello').style.color = button.dataset.color;
+        }
+      })
+
+    });
+  </script>
+</head>
+
+<body>
+  <h1 id="hello">Hello!</h1>
+  <button data-color="red">Red</button>
+  <button data-color="blue">Blue</button>
+  <button data-color="green">Green</button>
+  </form>
+</body>
+
+</html>

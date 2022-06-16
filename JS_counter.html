@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+  <html lang="en">
+  <title>Counter</title>
+  <script>
+    let counter = 0;
+    function count() {
+      counter++;
+      alert(counter);
+      //instead of pointing out document.querySelector each time in if we give a name of variable to it.it is also increasing the speed
+      let heading = document.querySelector('h1')
+      if (heading.innerHTML === 'Start Counting!') {
+        heading.innerHTML = 'Well Done!';
+      }
+      else {
+        heading.innerHTML = 'Start Counting!';
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <h1>Start Counting!</h1>
+  <button onclick="count()">Count</button>
+</body>
+
+</html>
